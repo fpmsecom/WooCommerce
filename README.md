@@ -19,6 +19,11 @@ What does it do?
 ----------------
 Presents the option to pay with credit card or debit card via the First Payments payment gateway.
 
+DOWNLOAD
+------------
+Click Code from the top of this page, then Download Zip
+
+![HowToDL](https://i.imgur.com/8JVti4N.png)
 
 INSTALLATION
 ------------
