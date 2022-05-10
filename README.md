@@ -8,7 +8,7 @@ This module enables the use of https://mms.firstpayments.co.uk/ payment gateway 
 COMPATIBILITY
 ------------
 
-Compatible with version 5.8 of Woocommerce and upto 5.8 of Wordpress. 
+Compatible with version 6.4.x of Woocommerce and upto 5.9.x of Wordpress.  Untested on vesrions prior to and including 3.x of both.
 
 INTRODUCTION
 ------------
@@ -24,6 +24,11 @@ DOWNLOAD
 Click Code from the top of this page, then Download Zip
 
 ![HowToDL](https://i.imgur.com/8JVti4N.png)
+
+UPGRADE PRECAUTIONS
+------------
+
+As a precaution, always Deactivate any existing version(s) of the extension you are currently using BEFORE uploading a newer version to your WooCommerce store or overwriting an existing version of the extension.  Failure to do so can result in PHP errors.
 
 INSTALLATION
 ------------
