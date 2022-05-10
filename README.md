@@ -3,7 +3,7 @@ Disclaimer: Please note that we no longer support older versions of SDKs and Mod
 First Payments Woocommerce Plugin
 ==============
 
-This module enables the use of http://www.firstpaymentmerchantservices.co.uk payment gateway using the Woocommerce project http://www.woothemes.com
+This module enables the use of http://mms.firstpayments.co.uk/ payment gateway using the Woocommerce project http://www.woothemes.com
 
 COMPATIBILITY
 ------------
