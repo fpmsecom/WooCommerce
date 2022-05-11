@@ -9,6 +9,12 @@ COMPATIBILITY
 ------------
 
 Compatible with version 6.4.x of Woocommerce and upto 5.9.x of Wordpress.  Untested on vesrions prior to and including 3.x of both.
+Supports WooCommerce Subscriptions.
+
+TESTING/DEMONSTRATION
+------------
+
+Testing/Non-live integration details can be provided on-request.
 
 INTRODUCTION
 ------------
