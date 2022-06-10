@@ -1,23 +1,23 @@
 <?php
 /*
-Plugin Name: FirstPayments
-Description: Provides the FirstPayments Payment Gateway for WooCommerce
+Plugin Name: PaymentNetwork
+Description: Provides the PaymentNetwork Payment Gateway for WooCommerce
 */
 
 /**
- * Initialise WC FirstPayments Gateway
+ * Initialise WC Payment Network Gateway
  **/
 add_action('plugins_loaded', 'init_wc_payment_network', 0);
 
 /**
- * Initialise WC FirstPayments Gateway
+ * Initialise WC PaymentNetwork Gateway
  **/
 if(function_exists('setup_module_database_tables')) {
     register_activation_hook( __FILE__, 'setup_module_database_tables' );
 }
 
 /**
- * Delete FirstPayments Gateway
+ * Delete PaymentNetwork Gateway
  **/
 if(function_exists('delete_plugin_database_table')) {
     register_uninstall_hook(__FILE__, 'delete_plugin_database_table');
@@ -68,7 +68,7 @@ function add_payment_network_payment_gateway($methods) {
 
 
 function setup_module_database_tables() {
-    $module_prefix = 'firstpayments_';
+    $module_prefix = 'payment_network_';
     global $wpdb;
     global $jal_db_version;
 
@@ -96,7 +96,7 @@ function setup_module_database_tables() {
 }
 
 function delete_plugin_database_table() {
-    $module_prefix = 'firstpayments_';
+    $module_prefix = 'payment_network_';
     global $wpdb;
     $wpdb->show_errors();
     $table_name = $wpdb->prefix . 'woocommerce_' . $module_prefix . 'wallets';
