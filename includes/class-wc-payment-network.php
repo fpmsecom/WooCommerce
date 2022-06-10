@@ -17,6 +17,11 @@ class WC_Payment_Network extends WC_Payment_Gateway
 	 * @var string
 	 */
 	public $default_merchant_id;
+	
+	/**
+	 * @var string
+	 */
+	public $default_gateway_url;
 
 	/**
 	 * @var string
@@ -40,6 +45,7 @@ class WC_Payment_Network extends WC_Payment_Gateway
 		$this->method_description  = __($configs['method_description'], $this->lang);
 		$this->default_merchant_id = $configs['default_merchant_id'];
 		$this->default_secret      = $configs['default_secret'];
+		$this->default_gateway_url = $configs['default_gateway_url'];
 
 		$this->supports = array(
 			'subscriptions',
