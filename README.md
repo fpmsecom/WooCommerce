@@ -72,6 +72,6 @@ Setup Instructions
 Setting up the module requires at a minimum a merchantID, a signature/secret key and
 a gateway URL i.e. https://gateway.firstpayments.co.uk to be entered in the plugin's settings.
 
-You will then need to select an integration type to use.
+You will then need to select an integration type to use.  We advise the Hosted Embedded option.
 
 The module will also need to be enabled so it appears as a payment option on the checkout.
