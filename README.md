@@ -1,40 +1,29 @@
 Disclaimer: Please note that we no longer support older versions of SDKs and Modules. We recommend that the latest versions are used.
 
-First Payments Woocommerce Plugin
+PaymentNetwork Woocommerce Plugin
 ==============
 
-This module enables the use of https://mms.firstpayments.co.uk/ payment gateway using the Woocommerce project http://www.woothemes.com
+This module enables the use of https://gateway.example.com payment gateway using the Woocommerce project http://www.woothemes.com.
 
 COMPATIBILITY
 ------------
 
-Compatible with version 6.4.x of Woocommerce and upto 5.9.x of Wordpress.  Untested on vesrions prior to and including 3.x of both.
-Supports WooCommerce Subscriptions.
+Compatible with version 6.x of Woocommerce and upto 6.x of Wordpress. 
 
-TESTING/DEMONSTRATION
+REQUIREMENTS
 ------------
 
-Testing/Non-live integration details can be provided on-request.
+PHP-BCMaths
 
 INTRODUCTION
 ------------
 
-This module enables the woocommerce customers to pay for their items using the First Payments hosted form or direct payment gateway.
+This module enables the woocommerce customers to pay for their items using the PaymentNetwork hosted form or direct payment gateway.
 
 What does it do?
 ----------------
-Presents the option to pay with credit card or debit card via the First Payments payment gateway.
+Presents the option to pay with credit card or debit card via the PaymentNetwork payment gateway.
 
-DOWNLOAD
-------------
-Click Code from the top of this page, then Download Zip
-
-![HowToDL](https://i.imgur.com/8JVti4N.png)
-
-UPGRADE PRECAUTIONS
-------------
-
-As a precaution, always Deactivate any existing version(s) of the extension you are currently using BEFORE uploading a newer version to your WooCommerce store or overwriting an existing version of the extension.  Failure to do so can result in PHP errors.
 
 INSTALLATION
 ------------
@@ -59,19 +48,32 @@ Manual installation
 
 3. Go to WooCommerce -> Settings and click on the Checkout tab. 
 
-4. Find First Payments in the Payment Gateways section 
+4. Find PaymentNetwork in the Payment Gateways section 
 
 5. Click the settings button to configure and enable the gateway.
 
 6. Click 'Save Changes'.
 
 
+Rebrand Instructions
+--------------------
+
+The module does not require any editing of file to be used. The options can be changed via the plugin settings.
+However you can pre set some of the branding options by by editing the config.php file. 
+This will allow you to set the defaults which are :
+
+gateway_title is the title of the module that will appear to the user when selecting the payment method on the checkout.
+method_description is the description that appears in the payment selected on checkout.
+default_merchant_id is the default merchant ID the module will use. It's recommended to use a test account.
+default_secrect is the signature/secret for the default merchant.
+
+
 Setup Instructions
 --------------------
 
 Setting up the module requires at a minimum a merchantID, a signature/secret key and
-a gateway URL i.e. https://gateway.firstpayments.co.uk to be entered in the plugin's settings.
+a gateway URL i.e. https://gateway.example.com to be entered in the plugin's settings.
 
-You will then need to select an integration type to use.  We advise the Hosted Embedded option.
+You will then need to select an integration type to use.
 
 The module will also need to be enabled so it appears as a payment option on the checkout.
