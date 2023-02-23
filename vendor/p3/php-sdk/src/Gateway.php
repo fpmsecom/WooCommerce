@@ -25,12 +25,12 @@ class Gateway
 	/**
 	 * @var string	Merchant Account Id or Alias
 	 */
-	protected $merchantID = '100856';
+	protected $merchantID = '121057';
 
 	/**
 	 * @var string	Secret for above Merchant Account
 	 */
-	protected $merchantSecret = 'Circle4Take40Idea';
+	protected $merchantSecret = 'gtlnofMTzfL5';
 
 	/**
 	 * Useful response codes
