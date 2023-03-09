@@ -10,17 +10,17 @@ class Gateway
 	/**
 	 * @var string	Gateway Hosted API Endpoint
 	 */
-	protected $hostedUrl = 'https://gateway.cardstream.com/paymentform/';
+	protected $hostedUrl = 'https://gateway.firstpayments.co.uk/paymentform/';
 
 	/**
 	 * @var string	Gateway Hosted Modal API Endpoint
 	 */
-	protected $hostedModalUrl = 'https://gateway.cardstream.com/hosted/modal/';
+	protected $hostedModalUrl = 'https://gateway.firstpayments.co.uk/hosted/modal/';
 
 	/**
 	 * @var string	Gateway Direct API Endpoint
 	 */
-	protected $directUrl = 'https://gateway.cardstream.com/direct/';
+	protected $directUrl = 'https://gateway.firstpayments.co.uk/direct/';
 
 	/**
 	 * @var string	Merchant Account Id or Alias
