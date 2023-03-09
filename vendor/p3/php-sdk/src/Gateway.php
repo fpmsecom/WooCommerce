@@ -3,29 +3,29 @@
 namespace P3\SDK;
 
 /**
- * Class to communicate with Payment Gateway
+ * Class to communicate with First Payments
  */
 class Gateway
 {
 	/**
 	 * @var string	Gateway Hosted API Endpoint
 	 */
-	protected $hostedUrl;
+	protected $hostedUrl = 'https://gateway.cardstream.com/paymentform/';
 
 	/**
 	 * @var string	Gateway Hosted Modal API Endpoint
 	 */
-	protected $hostedModalUrl;
+	protected $hostedModalUrl = 'https://gateway.cardstream.com/hosted/modal/';
 
 	/**
 	 * @var string	Gateway Direct API Endpoint
 	 */
-	protected $directUrl;
+	protected $directUrl = 'https://gateway.cardstream.com/direct/';
 
 	/**
 	 * @var string	Merchant Account Id or Alias
 	 */
-	protected $merchantID = '121057';
+	protected $merchantID = 121057;
 
 	/**
 	 * @var string	Secret for above Merchant Account
@@ -63,8 +63,7 @@ class Gateway
 	 * @param $gatewayURL
 	 * @param array $options
 	 */
-	public function __construct($merchantID, $merchantSecret, $gatewayURL, array $options = [])
-	{
+	public function __construct($merchantID, $merchantSecret, $gatewayURL, array $options = []) {
 		$this->merchantID = $merchantID;
 		$this->merchantSecret = $merchantSecret;
 
@@ -77,14 +76,14 @@ class Gateway
 		}
 
 		if (preg_match('/paymentform(\/.*)?/', $gatewayURL) == false) {
-			$this->hostedUrl = $gatewayURL.'hosted/';
+			$this->hostedUrl = $gatewayURL . 'hosted/';
 		} else {
 			$this->hostedUrl = $gatewayURL;
 			$gatewayURL = preg_replace('/paymentform(\/.*)?/', '', $gatewayURL, 1);
 		}
 
-		$this->hostedModalUrl = $gatewayURL.'hosted/modal/';
-		$this->directUrl = $gatewayURL.'direct/';
+		$this->hostedModalUrl = $gatewayURL . 'hosted/modal/';
+		$this->directUrl = $gatewayURL . 'direct/';
 
 		if (array_key_exists('client', $options)) {
 			$this->client = $options['client'];
@@ -124,8 +123,7 @@ class Gateway
 	 *
 	 * @return string  request HTML form.
 	 */
-	public function hostedRequest(array $request, bool $iframe = false, bool $modal = false): string
-	{
+	public function hostedRequest(array $request, bool $iframe = false, bool $modal = false): string {
 		static::debug(__METHOD__ . '() - args=', func_get_args());
 
 		if (!isset($request['redirectURL'])) {
@@ -171,8 +169,7 @@ HTML;
 	 * @param array $request request data
 	 * @return array request response
 	 */
-	public function directRequest(array $request): array
-	{
+	public function directRequest(array $request): array {
 		static::debug(__METHOD__ . '() - args=', func_get_args());
 
 		$request['signature'] = static::sign($request, $this->merchantSecret);
@@ -189,8 +186,7 @@ HTML;
 	 * @param int $amount
 	 * @return array
 	 */
-	public function refundRequest(string $xref, int $amount): array
-	{
+	public function refundRequest(string $xref, int $amount): array {
 		$queryPayload = [
 			'merchantID' => $this->merchantID,
 			'xref' => $xref,
@@ -221,7 +217,7 @@ HTML;
 				]);
 				break;
 			default:
-				throw new \InvalidArgumentException('Something went wrong, we can\'t find transaction '. $xref);
+				throw new \InvalidArgumentException('Something went wrong, we can\'t find transaction ' . $xref);
 		}
 
 		$payload['signature'] = static::sign($payload, $this->merchantSecret);
@@ -303,8 +299,7 @@ HTML;
 	}
 
 	// Render HTML to silently POST data to URL in target browser window
-	static public function silentPost($url = '?', array $post = null, $target = '_self'): string
-	{
+	static public function silentPost($url = '?', array $post = null, $target = '_self'): string {
 
 		$url = htmlentities($url);
 		$target = htmlentities($target);
@@ -337,8 +332,7 @@ HTML;
 	 * @param mixed $value field value
 	 * @return    string                    HTML containing <INPUT> tags
 	 */
-	static protected function fieldToHtml(string $name, $value): string
-	{
+	static protected function fieldToHtml(string $name, $value): string {
 		$ret = '';
 		if (is_array($value)) {
 			foreach ($value as $n => $v) {
@@ -346,7 +340,9 @@ HTML;
 			}
 		} else {
 			// Convert all applicable characters or none printable characters to HTML entities
-			$value = preg_replace_callback('/[\x00-\x1f]/', function($matches) { return '&#' . ord($matches[0]) . ';'; }, htmlentities($value, ENT_COMPAT, 'UTF-8', true));
+			$value = preg_replace_callback('/[\x00-\x1f]/', function ($matches) {
+				return '&#' . ord($matches[0]) . ';';
+			}, htmlentities($value, ENT_COMPAT, 'UTF-8', true));
 			$ret = "<input type=\"hidden\" name=\"{$name}\" value=\"{$value}\" />";
 		}
 
