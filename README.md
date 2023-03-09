@@ -1,9 +1,9 @@
 Disclaimer: Please note that we no longer support older versions of SDKs and Modules. We recommend that the latest versions are used.
 
-PaymentNetwork Woocommerce Plugin
+First Payments Woocommerce Plugin
 ==============
 
-This module enables the use of https://gateway.cardstream.com payment gateway using the Woocommerce project http://www.woothemes.com.
+This module enables the use of https://gateway.firstpayments.co.uk payment gateway using the Woocommerce project http://www.woothemes.com.
 
 COMPATIBILITY
 ------------
@@ -18,11 +18,11 @@ PHP-BCMaths
 INTRODUCTION
 ------------
 
-This module enables the woocommerce customers to pay for their items using the PaymentNetwork hosted form or direct payment gateway.
+This module enables the woocommerce customers to pay for their items using the First Payments hosted form or direct payment gateway.
 
 What does it do?
 ----------------
-Presents the option to pay with credit card or debit card via the PaymentNetwork payment gateway.
+Presents the option to pay with credit card or debit card via the First Payments payment gateway.
 
 
 INSTALLATION
@@ -55,24 +55,11 @@ Manual installation
 6. Click 'Save Changes'.
 
 
-Rebrand Instructions
---------------------
-
-The module does not require any editing of file to be used. The options can be changed via the plugin settings.
-However you can pre set some of the branding options by by editing the config.php file. 
-This will allow you to set the defaults which are :
-
-gateway_title is the title of the module that will appear to the user when selecting the payment method on the checkout.
-method_description is the description that appears in the payment selected on checkout.
-default_merchant_id is the default merchant ID the module will use. It's recommended to use a test account.
-default_secrect is the signature/secret for the default merchant.
-
-
 Setup Instructions
 --------------------
 
 Setting up the module requires at a minimum a merchantID, a signature/secret key and
-a gateway URL i.e. https://gateway.cardstream.com to be entered in the plugin's settings.
+a gateway URL i.e. https://gateway.firstpayments.co.uk to be entered in the plugin's settings.
 
 You will then need to select an integration type to use.
 
